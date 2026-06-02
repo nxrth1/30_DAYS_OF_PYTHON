@@ -22,7 +22,7 @@ def dd_to_dms(decimal_degree, is_longitude = True):
     minutes_float = (abs_dd - degrees)*60
     minutes_int = int(minutes_float)
     minutes = abs(minutes_int)
-    seconds = (minutes_int-minutes)*60
+    seconds = (minutes_float-minutes_int)*60
     seconds = round(seconds,3)
     if seconds >= 60.0:
         seconds = 0.0
@@ -30,7 +30,7 @@ def dd_to_dms(decimal_degree, is_longitude = True):
 
     if minutes >= 60.0:
         minutes = 0.0
-        degree += 1
+        degrees += 1
 
     dms_string = f"{degrees}° {minutes}' {seconds}\" {direction}"
     
