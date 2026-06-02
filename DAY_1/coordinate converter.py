@@ -16,7 +16,7 @@ def dd_to_dms(decimal_degree, is_longitude = True):
     if is_longitude:
         direction = "E" if decimal_degree >= 0 else "W"
     else:
-        direction = "N" if decimal_degree >= 0 else "E"
+        direction = "N" if decimal_degree >= 0 else "S"
     abs_dd = abs(decimal_degree)
     degrees= int(abs_dd)
     minutes_float = (abs_dd - degrees)*60
